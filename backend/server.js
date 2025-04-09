@@ -16,9 +16,9 @@ const port = process.env.PORT || 3000;
 // ✅ Enable CORS before other middlewares and routes
 app.use(
   cors({
-    origin: "http://localhost:5173", // Your React frontend
-    methods: ["GET", "POST"],
-    credentials: true,
+    origin: "*", // Allow all origins
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    credentials: false, // Set to true only if you're using cookies/sessions
   })
 );
 
