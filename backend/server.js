@@ -16,7 +16,7 @@ const port = process.env.PORT || 3000;
 // ✅ Enable CORS before other middlewares and routes
 app.use(
   cors({
-    origin: "*", // Allow all origins
+    origin: "https://myai-d0k0.onrender.com", // Allow all origins
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     credentials: false, // Set to true only if you're using cookies/sessions
   })
