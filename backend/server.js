@@ -18,7 +18,7 @@ app.use(
   cors({
     origin: "https://myai-d0k0.onrender.com", // Allow all origins
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    credentials: false, // Set to true only if you're using cookies/sessions
+    credentials: true, // Set to true only if you're using cookies/sessions
   })
 );
 
