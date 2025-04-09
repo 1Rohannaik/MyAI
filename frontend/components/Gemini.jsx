@@ -177,7 +177,7 @@ const Gemini = () => {
         throw new Error("Please login to continue");
       }
 
-      const apiUrl = "http://localhost:3000/api/openrouter/generate";
+      const apiUrl = "https://myai-backend-i80t.onrender.com/api/openrouter/generate";
 
       const response = await fetch(apiUrl, {
         method: "POST",
