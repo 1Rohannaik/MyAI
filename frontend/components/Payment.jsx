@@ -69,7 +69,7 @@ const redirectAfterPayment = () => {
         setIsVerifying(true);
         try {
           const res = await axios.post(
-            "http://localhost:3000/api/v1/payment/verify",
+            "https://myai-backend-i80t.onrender.com/api/v1/payment/verify",
             {
               paymentId: response.razorpay_payment_id,
               plan,
@@ -85,7 +85,7 @@ const redirectAfterPayment = () => {
           if (res.data.success) {
             try {
               const userRes = await axios.get(
-                "http://localhost:3000/api/v1/users/me",
+                "https://myai-backend-i80t.onrender.com/api/v1/users/me",
                 {
                   headers: {
                     Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -146,7 +146,7 @@ const redirectAfterPayment = () => {
         redirectAfterPayment();
       } else {
         const orderResponse = await axios.post(
-          "http://localhost:3000/api/v1/payment/orders",
+          "https://myai-backend-i80t.onrender.com/api/v1/payment/orders",
           {
             amount: currentPlan.price,
             currency: "INR",
