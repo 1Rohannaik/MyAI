@@ -9,7 +9,6 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-  // If already logged in, redirect to /gemini
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
