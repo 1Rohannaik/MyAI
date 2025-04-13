@@ -1,5 +1,5 @@
 const jwt = require("jsonwebtoken");
-const User = require("../model/userModel"); // adjust if your model is named differently
+const User = require("../model/userModel");
 
 const authenticate = async (req, res, next) => {
   const authHeader = req.headers.authorization;
@@ -12,7 +12,7 @@ const authenticate = async (req, res, next) => {
 
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    const user = await User.findByPk(decoded.id); // Sequelize style. Use `findById` if using Mongoose.
+    const user = await User.findByPk(decoded.id); 
 
     if (!user) {
       return res.status(404).json({ message: "User not found" });
