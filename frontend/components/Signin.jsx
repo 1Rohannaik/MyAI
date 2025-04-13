@@ -11,7 +11,6 @@ const Signin = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-  // Redirect if already logged in
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
