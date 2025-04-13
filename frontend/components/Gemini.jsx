@@ -193,7 +193,7 @@ const Gemini = () => {
 
       clearTimeout(timeoutId);
 
-      // Handle 403 specifically
+      // Handling 403 specifically
       if (response.status === 403) {
         const errorData = await response.json();
         if (errorData.error?.toLowerCase().includes("token")) {
@@ -280,11 +280,6 @@ const Gemini = () => {
     e.stopPropagation();
     setChatHistory((prev) => prev.filter((chat) => chat.session_id !== id));
   };
-
-  const handleCopy = () => {
-    // You can add a toast or UI feedback here
-  };
-
   const onKeyDown = (e) => {
     if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
@@ -294,7 +289,6 @@ const Gemini = () => {
 
   return (
     <div className="min-h-screen flex bg-gradient-to-br from-gray-700 to-black">
-      {/* Sidebar */}
       <div
         className={`h-screen bg-gradient-to-br from-slate-950 via-slate-800 to-slate-900 ${
           expanded ? "w-56" : "w-16"
@@ -356,8 +350,6 @@ const Gemini = () => {
           />
         </div>
       </div>
-
-      {/* Main Chat Area */}
       <div className="flex flex-col flex-grow items-center p-6 relative">
         <button
           onClick={() => navigate("/")}
