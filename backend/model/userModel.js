@@ -24,8 +24,6 @@ const User = sequelize.define("User", {
     type: DataTypes.STRING,
     allowNull: false,
   },
-
-  // ✅ New fields below
   isSubscribed: {
     type: DataTypes.BOOLEAN,
     defaultValue: false,
