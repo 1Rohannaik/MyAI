@@ -8,7 +8,7 @@ const Home = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
-    // Check if a token is stored in localStorage
+    // Checking if a token is stored in localStorage
     if (localStorage.getItem("token")) {
       setIsLoggedIn(true);
     }
@@ -16,9 +16,9 @@ const Home = () => {
 
   const handleTryForFree = () => {
     if (isLoggedIn) {
-      navigate("/gemini"); // Redirect to /gemini if the user is logged in
+      navigate("/gemini"); 
     } else {
-      navigate("/signin"); // Redirect to /signin if the user is not logged in
+      navigate("/signin");
     }
   };
 
@@ -28,7 +28,6 @@ const Home = () => {
       <div className="min-h-screen bg-gradient-to-br from-gray-700 to-black text-white">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 pt-24 sm:pt-32">
           <div className="flex flex-col lg:flex-row items-center justify-between">
-            {/* Text Content */}
             <div className="lg:w-1/2 space-y-6">
               <h1 className="text-4xl sm:text-5xl font-bold leading-tight">
                 <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
@@ -51,12 +50,10 @@ const Home = () => {
                 <span className="absolute inset-0 bg-white/10 backdrop-blur-sm rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
               </button>
             </div>
-
-            {/* Image */}
             <div className="lg:w-1/2 mt-12 lg:mt-0 flex justify-center">
               <div className="relative w-full max-w-xl">
                 <img
-                  src="https://images.pexels.com/photos/3755707/pexels-photo-3755707.jpeg"
+                  src="https://imgs.search.brave.com/u7GC3WfPNuHuBNk_lL80RypEnwXStImI9imkCM-31YU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTM4/NzkwMDYxMi9waG90/by9hdXRvbWF0aW9u/LWRhdGEtYW5hbHl0/aWMtd2l0aC1yb2Jv/dC1hbmQtZGlnaXRh/bC12aXN1YWxpemF0/aW9uLWZvci1iaWct/ZGF0YS1zY2llbnRp/c3QuanBnP3M9NjEy/eDYxMiZ3PTAmaz0y/MCZjPTUwbWFPSlU2/Q3BWQzU1bVluVXF0/ZmYyYWlhSlo3S2xt/TW40ak5oV0RfZW89"
                   alt="AI Technology"
                   className="rounded-2xl shadow-2xl border border-gray-700 w-full h-auto transition-all duration-500 hover:scale-105"
                 />
