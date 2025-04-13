@@ -13,14 +13,11 @@ const port = process.env.PORT || 3000;
 
 
 
-// ✅ Enable CORS before other middlewares and routes
-app.use(
-  cors({
-    origin: "https://myai-d0k0.onrender.com", // Allow all origins
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    credentials: true, // Set to true only if you're using cookies/sessions
-  })
-);
+app.use(cors({
+  origin: 'https://myai-d0k0.onrender.com',
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true, 
+}));
 
 // Middleware
 app.use(express.json());
