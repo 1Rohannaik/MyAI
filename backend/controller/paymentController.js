@@ -21,7 +21,7 @@ const createOrder = async (req, res) => {
   try {
     const { amount, currency = "INR" } = req.body;
 
-    const amountInPaise = Math.round(amount * 100); // Convert to paise
+    const amountInPaise = Math.round(amount * 100);
 
     const options = {
       amount: amountInPaise,
@@ -93,7 +93,7 @@ const verifyPayment = async (req, res) => {
 
     user.apiKeyActive = true;
     user.totalRemaining = user.totalRemaining + inc;
-    user.isSubscribed = true; // ✅ Set subscription status to true
+    user.isSubscribed = true; 
 
     await user.save();
 
