@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
-import { Menu, X } from "lucide-react"; // Hamburger & close icon
+import { Menu, X } from "lucide-react"; 
 
 const Header = () => {
   const navigate = useNavigate();
@@ -26,13 +26,12 @@ const Header = () => {
 
   const handleNavClick = (route) => {
     navigate(route);
-    setMenuOpen(false); // Close menu on nav
+    setMenuOpen(false); 
   };
 
   return (
     <header className="fixed w-full z-50  shadow-lg">
       <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
-        {/* Logo */}
         <div
           className="flex items-center cursor-pointer"
           onClick={() => navigate("/")}
@@ -44,8 +43,6 @@ const Header = () => {
             <span className="absolute -bottom-1 left-0 w-full h-1 bg-gradient-to-r from-blue-400/50 to-purple-500/30 rounded-full"></span>
           </span>
         </div>
-
-        {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
           <NavLink
             to="/gemini"
@@ -74,15 +71,11 @@ const Header = () => {
             <span className="absolute left-0 -bottom-1 h-0.5 bg-blue-500 transition-all duration-300 w-0 group-hover:w-full"></span>
           </NavLink>
         </nav>
-
-        {/* Hamburger Icon */}
         <div className="md:hidden">
           <button onClick={toggleMenu} className="text-white">
             {menuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
-
-        {/* Auth Buttons (desktop only) */}
         <div className="hidden md:flex">
           {isAuthenticated ? (
             <button
@@ -101,8 +94,6 @@ const Header = () => {
           )}
         </div>
       </div>
-
-      {/* Mobile Menu */}
       {menuOpen && (
         <div className="md:hidden px-6 pb-4  backdrop-blur-md shadow-lg space-y-4">
           <NavLink
