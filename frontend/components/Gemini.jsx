@@ -280,6 +280,10 @@ const Gemini = () => {
     e.stopPropagation();
     setChatHistory((prev) => prev.filter((chat) => chat.session_id !== id));
   };
+
+   const handleCopy = () => {
+    
+  };
   const onKeyDown = (e) => {
     if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
