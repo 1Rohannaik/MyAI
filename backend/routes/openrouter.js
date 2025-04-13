@@ -2,11 +2,10 @@ const express = require("express");
 const axios = require("axios");
 const router = express.Router();
 const User = require("../model/userModel");
-const { protect } = require("../middleware/authMiddleware"); // <- Make sure path is correct
+const { protect } = require("../middleware/authMiddleware");
 
 const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY;
 
-// ✅ Add protect middleware here 👇
 router.post("/generate", protect, async (req, res) => {
   const { prompt } = req.body;
   const userId = req.user?.id;
